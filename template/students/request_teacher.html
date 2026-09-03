@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block title %}Request to be a teacher{% endblock %}
+
+{% block content %}
+<h1>Request to be a teacher</h1>
+
+<div class="module">
+    <p>
+        All new accounts start as students.
+        If you want instructor access, contact the admin:
+    </p>
+
+    <ul>
+        <li>Email: <strong>saosopheakit@email.com</strong></li>
+        <li>Telegram: <strong>@Ushiru &middot; +855 86 294 561</strong></li>
+    </ul>
+
+    <p>
+        After approval, you will get access to the teacher tools.
+    </p>
+
+    <p>
+        <a href="{% url 'student:student_course_list' %}" class="button">Back to My courses</a>
+    </p>
+</div>
+{% endblock %}

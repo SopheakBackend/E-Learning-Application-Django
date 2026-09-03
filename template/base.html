@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>{% block title%}Education{% endblock title%}</title>
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+</head>
+<body>
+    <div id="header">
+        <a href="/" class="logo">Education</a>
+        <ul class="menu">
+            {% if request.user.is_authenticated %}
+                <li>
+                    <a href="{% url 'student:student_course_list' %}">My courses</a>
+                </li>
+
+            {% if not perms.courses.add_course %}
+                <li>
+                    <a href="{% url 'student:request_teacher' %}">Request to be a teacher</a>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'course:manage_course_list' %}">Manage Courses</a>
+                </li>
+            {% endif %}
+                <li>
+                    <form action="{% url 'logout' %}" method="post">
+                        {% csrf_token %}
+                        <input type="submit" value="Logout">
+                    </form>
+                </li>
+            {% else %}
+                <li>
+                    <a href="{% url 'login' %}">Login</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+    <div id="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    
+    {% block include_js %}
+    {% endblock %}
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', (event) => {
+            {% block domready %}
+            {% endblock %}
+        })
+    </script>
+
+</body>
+</html>

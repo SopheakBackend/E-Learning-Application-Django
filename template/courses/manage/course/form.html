@@ -1,0 +1,15 @@
+{% extends 'base.html'%}
+{% block title %}{%if object %}Edit course{% else %}Create a new course{% endif %}{% endblock title %}
+{% block content %}
+    <h1>{% if object %}Edit course "{{ object.title }}"{% else %}Create a new course{% endif %}</h1>
+    <div class="module">
+        <h2>Course info</h2>
+        <form action="" method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <p><input type="submit" value="Save Course"></p>
+        </form>
+    </div>
+
+
+{% endblock content %}

@@ -1,0 +1,34 @@
+[
+{
+  "model": "courses.subject",
+  "pk": 1,
+  "fields": {
+    "title": "Python Programming",
+    "slug": "python-programming"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 2,
+  "fields": {
+    "title": "Python Django",
+    "slug": "python-django"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 3,
+  "fields": {
+    "title": "C#",
+    "slug": "c"
+  }
+},
+{
+  "model": "courses.subject",
+  "pk": 4,
+  "fields": {
+    "title": "PHP Laravel",
+    "slug": "php-laravel"
+  }
+}
+]
