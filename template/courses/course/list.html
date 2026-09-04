@@ -34,9 +34,9 @@
                 <a href="{% url 'course:course_detail' course.slug %}"> {{ course.title }} </a>
             </h3>
             <p>
-                <a href="{% url 'course:course_list_subject' subject.slug %}"> {{subject}} &middot;</a>
+                Subject: <a href="{% url 'course:course_list_subject' subject.slug %}"> {{subject}} &middot;</a>
                 {{ course.total_modules }} modules &middot
-                Instructor: {{ course.owner.get_full_name }}
+                Instructor: {{ course.owner.get_full_name|default:course.owner.username }}
             </p>
             {% endwith %}
         {% endfor %}

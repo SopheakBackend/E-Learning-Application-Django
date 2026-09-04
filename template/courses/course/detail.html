@@ -8,15 +8,19 @@
         <p>
             <a href="{% url 'course:course_list_subject' subject.slug %}">{{ subject.title }}</a>
             {{ object.modules.count }} modules.
-            Instructor: {{ object.owner.get_full_name }}
+            Instructor: {{ object.owner.get_full_name|default:course.owner.username }}
         </p>
         {{ object.overview|linebreaks }}
         {% if request.user.is_authenticated %}
-            <form action="{% url 'student:student_enroll_course' %}" method="post">
-                {% csrf_token %}
-                {{ enroll_form }}
-                <input type="submit" value="Enroll Now">
-            </form>
+            {% if object.modules.count >= 1 %}
+                <form action="{% url 'student:student_enroll_course' %}" method="post">
+                    {% csrf_token %}
+                    {{ enroll_form }}
+                    <input type="submit" value="Enroll Now">
+                </form>
+            {% else %}
+                <p>Cannot be enroll due to not having any course yet.</p>
+            {% endif %}
         {% else %}
             <a href="{% url 'student:student_registration' %}">Register to enroll the Course</a>
         {% endif %}

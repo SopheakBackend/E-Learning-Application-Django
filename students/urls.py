@@ -16,7 +16,8 @@ urlpatterns = [
     #Module list
     # path('course/<int:pk>', cache_page(60 * 15)(views.StudentCourseDetailView.as_view()), name='student_course_detail'),
     path('course/<int:pk>', views.StudentCourseDetailView.as_view(), name='student_course_detail'),
-    path('course/<int:pk>/<int:module_id>', cache_page(60 * 15)(views.StudentCourseDetailView.as_view()), name='student_course_detail_module'),    
+    # path('course/<int:pk>/<int:module_id>', cache_page(60 * 15)(views.StudentCourseDetailView.as_view()), name='student_course_detail_module'),    
+    path('course/<int:pk>/<int:module_id>', views.StudentCourseDetailView.as_view(), name='student_course_detail_module'),    
     
     #Become a teacher
     path('request-teacher/', views.request_teacher, name='request_teacher'),
