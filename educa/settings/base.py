@@ -1,5 +1,7 @@
+import os
 from pathlib import Path
 from django.urls import reverse_lazy
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent.parent
@@ -9,8 +11,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent.parent
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '97ax#%8bu@syj*&3w#t&k6^vpac9jts$-8bj!e^^hbj$)*ao2$'
-
+SECRET_KEY = os.environ.get('SECRET_KEY', 'fallback-key-for-local-dev-only')
 
 
 ALLOWED_HOSTS = []
