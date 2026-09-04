@@ -1,9 +1,6 @@
-# E-Learning-Application
-E-learning Project using Django and other technologies. Allow Instructor to be able to list their lessons with editable CMS built-in and user as a student will be able to enroll for courses and be able to chat with other people in the same course chat room.
-
 # 🎓 E-Learning Application
 
-A comprehensive, production-ready E-Learning Platform built using **Django** and powered by asynchronous **WebSockets**. The system features a custom Content Management System (CMS) for instructors to manage courses, module enrollments for students, and Real-Time Chat Rooms within individual course workspaces.
+A comprehensive, production-ready E-Learning Platform built using **Django** and powered by asynchronous **WebSockets**. The system features a custom Content Management System (CMS) with custom draggable content allow for instructors to manage courses and modules without having to delete and start from scratch, module enrollments for students, and Real-Time Chat Rooms within individual course workspaces.
 
 ---
 
