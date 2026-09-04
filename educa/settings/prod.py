@@ -31,3 +31,10 @@ EMAIL_USE_SSL = False
 EMAIL_HOST_USER = config('EMAIL_HOST_USER')
 EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 DEFAULT_FROM_EMAIL = config('DEFAULT_FROM_EMAIL')
+
+CSRF_TRUSTED_ORIGINS = [
+    'https://www.educaproject.com',
+    'https://educaproject.com',
+]
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')

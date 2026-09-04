@@ -17,15 +17,16 @@
                     <a href="{% url 'student:student_course_list' %}">My courses</a>
                 </li>
 
-            {% if not perms.courses.add_course %}
-                <li>
-                    <a href="{% url 'student:request_teacher' %}">Request to be a teacher</a>
-                </li>
-            {% else %}
-                <li>
-                    <a href="{% url 'course:manage_course_list' %}">Manage Courses</a>
-                </li>
-            {% endif %}
+                {% if perms.courses.add_course %}
+                    <li>
+                        <a href="{% url 'course:manage_course_list' %}">Manage Courses</a>
+                        
+                    </li>
+                {% else %}
+                    <li>
+                        <a href="{% url 'student:request_teacher' %}">Request to be a teacher</a>
+                    </li>
+                {% endif %}
                 <li>
                     <form action="{% url 'logout' %}" method="post">
                         {% csrf_token %}
