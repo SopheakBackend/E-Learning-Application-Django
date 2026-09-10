@@ -1,27 +1,27 @@
-# 🎓 E-Learning Application
+#  E-Learning Application
 
 A comprehensive, production-ready E-Learning Platform built using **Django** and powered by asynchronous **WebSockets**. The system features a custom Content Management System (CMS) with custom draggable content allow for instructors to manage courses and modules without having to delete and start from scratch, module enrollments for students, and Real-Time Chat Rooms within individual course workspaces.
 
 ---
 
-## 🚀 Features
+##  Features
 
-### 👨‍🏫 For Instructors (CMS)
+###  For Instructors (CMS)
 - **Course & Module Management:** Create, update, and organize courses dynamically.
 - **Flexible Content Types:** Support for text, video, files, and images within lectures.
 - **Order Management:** Drag-and-drop ordering system for modules and contents.
 
-### 🧑‍🎓 For Students
+###  For Students
 - **Course Enrollment:** Simple discovery and student registration process for available courses.
 - **Interactive Workspace:** Clean interface to follow multi-module educational courses.
 
-### 💬 Real-Time Collaboration
+###  Real-Time Collaboration
 - **Course Chat Rooms:** Instant message exchanging inside designated course channels.
 - **Asynchronous Architecture:** Handled completely via persistent WebSocket connections.
 
 ---
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 - **Backend Framework:** Django (Python)
 - **Asynchronous Engine:** Django Channels (ASGI) & WebSockets
@@ -33,7 +33,7 @@ A comprehensive, production-ready E-Learning Platform built using **Django** and
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 ├── chat/               # WebSocket consumer logic and chat configurations
@@ -47,7 +47,7 @@ A comprehensive, production-ready E-Learning Platform built using **Django** and
 
 ---
 
-## ⚙️ Installation & Local Setup
+##  Installation & Local Setup
 
 ### Prerequisites
 Make sure you have the following installed on your machine:
